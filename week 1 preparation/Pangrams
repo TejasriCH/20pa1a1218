@@ -1,0 +1,23 @@
+class Result {
+    public static String pangrams(String s) {
+    // Write your code here
+        int in=0;
+        boolean[] a=new boolean[26];
+       for(int i=0;i<s.length();i++){
+           if(s.charAt(i)>='A' && s.charAt(i)<='Z'){
+               in=s.charAt(i)-'A';
+           }
+           if(s.charAt(i)>='a' && s.charAt(i)<='z'){
+               in=s.charAt(i)-'a';
+           }
+           a[in]=true;
+       }
+       for(int i=0;i<26;i++){
+           if(!a[i]){
+               return "not pangram";
+           }
+       }
+       return "pangram";
+    }
+
+}
