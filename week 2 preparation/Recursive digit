@@ -1,0 +1,19 @@
+class Result {
+    public static int superDigit(String n, int k) {
+      int sum=digit(n)*k;
+        if(sum>9){
+            sum=digit(String.valueOf(sum));
+        } 
+        return sum;
+    }
+    static int digit(String x){
+        if(x.length()==1){
+            return Integer.parseInt(x);
+        }
+        int num=0;
+        for(int i=0;i<x.length();i++){
+            num+=Integer.parseInt(String.valueOf(x.charAt(i)));
+        }
+        return digit(String.valueOf(num));
+        }
+    }
