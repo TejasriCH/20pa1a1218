@@ -1,0 +1,12 @@
+class Result {     
+    public static int maxMin(int k, List<Integer> arr) {
+      int n=arr.size();
+      Collections.sort(arr);
+      int l=Integer.MAX_VALUE;
+      for(int j=0;j<n-k+1;j++){
+          l=Math.min(arr.get(j+k-1)-arr.get(j),l);
+      }
+      return l;
+    }
+
+}
