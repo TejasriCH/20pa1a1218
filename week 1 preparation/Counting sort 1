@@ -1,0 +1,16 @@
+class Result {
+public static List<Integer> countingSort(List<Integer> arr) {
+      Collections.sort(arr);
+      List<Integer> count=new ArrayList<Integer>(Collections.nCopies(100,0));
+       for(Integer i:arr){
+           if(count.get(i)!=0){
+               count.set(i,count.get(i)+1);
+           }
+           else{
+             count.set(i,1);
+           }
+       }
+      return count;
+    }
+
+}
